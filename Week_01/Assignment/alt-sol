@@ -1,0 +1,16 @@
+# Using any() and all()
+
+angles = [int(x) for x in input('Enter angles of the triangle: ').split()]
+
+if sum(angles) == 180:
+
+    if any(angle <= 0 for angle in angles):
+        print("Angles smaller than 0 are not valid.")
+    elif any(angle == 90 for angle in angles):
+        print("The triangle is a right triangle.")
+    elif all(angle < 90 for angle in angles):
+        print("The triangle is an acute triangle.")
+    else:
+        print("The triangle is an obtuse triangle.")
+else:
+    print('The entered values are not valid')
