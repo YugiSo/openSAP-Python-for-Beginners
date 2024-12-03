@@ -1,0 +1,16 @@
+# Using List Comprehension
+
+from math import pi as truePI
+from random import random
+
+def getDistXY() -> float:
+    x, y =  random(), random()
+    return x*x + y*y
+
+inside = [1 if getDistXY() <= 1 else 0 for _ in range(10000)]
+
+expPI = 4 * (sum(inside) / len(inside))
+
+print(f'Calculated value of π: {expPI}')
+print(f'Value of π from math library: {truePI}')
+print(f'Difference: {expPI - truePI}')
